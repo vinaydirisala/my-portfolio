@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinay Dirisala | UI/UX Architect</title>
+    <title>Vinay Dirisala | UI/UX & Game Dev Architect</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
@@ -30,15 +30,10 @@
         .orb-blue { width: 500px; height: 500px; background: #1d4ed8; bottom: 5%; left: 10%; }
         @keyframes floatOrb { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(50px, 80px) scale(1.05); } }
 
-        /* --- SIDEBAR & NAV ICONS --- */
+        /* --- SIDEBAR --- */
         aside { width: 320px; height: 100vh; background: var(--sidebar); position: fixed; left: 0; top: 0; padding: 50px 30px; display: flex; flex-direction: column; border-right: 1px solid var(--glass-border); backdrop-filter: blur(40px); z-index: 100; }
-        
         .avatar-container { position: relative; width: 180px; height: 180px; margin: 0 auto 30px; }
-        .avatar-frame { 
-            width: 100%; height: 100%; border-radius: 50%; 
-            background: url('image_fc8a86.jpeg') center/cover; /* CORRECTED EXTENSION */
-            border: 3px solid var(--accent); box-shadow: 0 15px 40px rgba(0,0,0,0.6); z-index: 2; position: relative; 
-        }
+        .avatar-frame { width: 100%; height: 100%; border-radius: 50%; background: url('image_fc8a86.jpeg') center/cover; border: 3px solid var(--accent); box-shadow: 0 15px 40px rgba(0,0,0,0.6); z-index: 2; position: relative; }
         .avatar-container::before { content: ""; position: absolute; inset: -12px; border: 2px dashed var(--accent); border-radius: 50%; opacity: 0.4; animation: rotateHalo 15s linear infinite; }
         @keyframes rotateHalo { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
@@ -57,8 +52,21 @@
         .title-sharp { font-family: 'Space Grotesk'; font-size: 4.8rem; font-weight: 700; line-height: 0.95; margin-bottom: 40px; letter-spacing: -4px; text-transform: uppercase; }
         .gold { color: var(--accent); text-shadow: 0 0 25px var(--accent-glow); }
 
-        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); padding: 50px; border-radius: 40px; backdrop-filter: blur(20px); margin-bottom: 40px; position: relative; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--glass-border); padding: 50px; border-radius: 40px; backdrop-filter: blur(20px); margin-bottom: 40px; position: relative; transition: 0.4s; }
         .glass-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        /* --- TECH ICONS --- */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 20px; margin-top: 20px; }
+        .tech-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); padding: 25px; border-radius: 20px; text-align: center; transition: 0.4s; }
+        .tech-box i { font-size: 2.5rem; color: var(--text-muted); transition: 0.4s; }
+        .tech-box:hover i { color: var(--accent); }
+        .tech-label { display: block; font-size: 0.7rem; font-weight: 800; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; }
+
+        /* --- TIMELINE --- */
+        .timeline-graphic { position: relative; padding-left: 40px; border-left: 2px solid var(--glass-border); }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ""; position: absolute; left: -51px; top: 0; width: 20px; height: 20px; background: var(--bg-deep); border: 3px solid var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent-glow); }
+        .year-tag { font-family: 'Space Grotesk'; color: var(--accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; }
 
         /* --- CONTACT ENHANCEMENTS --- */
         .terminal-header { display: flex; gap: 8px; margin-bottom: 30px; }
@@ -73,18 +81,6 @@
         }
         @keyframes typewriter { from { width: 0; } to { width: 100%; } }
         @keyframes blink { from, to { border-color: transparent; } 50% { border-color: var(--accent); } }
-
-        /* --- TECH ICONS --- */
-        .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 20px; margin-top: 20px; }
-        .tech-box { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); padding: 25px; border-radius: 20px; text-align: center; transition: 0.4s; }
-        .tech-box i { font-size: 2.5rem; color: var(--text-muted); transition: 0.4s; }
-        .tech-box:hover i { color: var(--accent); }
-        .tech-label { display: block; font-size: 0.7rem; font-weight: 800; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; }
-
-        .timeline-graphic { position: relative; padding-left: 40px; border-left: 2px solid var(--glass-border); }
-        .timeline-item { position: relative; margin-bottom: 40px; }
-        .timeline-item::before { content: ""; position: absolute; left: -51px; top: 0; width: 20px; height: 20px; background: var(--bg-deep); border: 3px solid var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent-glow); }
-        .year-tag { font-family: 'Space Grotesk'; color: var(--accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; }
 
         .btn-gold { display: inline-block; padding: 20px 45px; background: var(--accent); color: #000; text-decoration: none; font-weight: 800; border-radius: 20px; transition: 0.4s; margin-top: 20px; }
         .btn-gold:hover { transform: translateY(-5px); box-shadow: 0 20px 40px var(--accent-glow); }
@@ -121,17 +117,21 @@
                     Skilled in tools like Figma, Framer, and Canva, I design seamless mobile and web experiences. I continuously work on improving my skills and staying updated with modern design trends. I’m currently seeking opportunities to grow and contribute to meaningful design projects.
                 </p>
             </div>
+            
             <h2 style="font-family:'Space Grotesk'; font-size:2.2rem; margin-bottom:30px;">Academic <span class="gold">Trajectory</span></h2>
             <div class="glass-card timeline-graphic">
-                <div class="timeline-item" data-aos="fade-left"><span class="year-tag">2026 — PRESENT</span><h3>Backstagepass Institute of Gaming</h3><p style="color:var(--text-muted);">B.Sc. in Computer Science & Game Development</p></div>
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200"><span class="year-tag">2021 — 2023</span><h3>Sri Chaitanya Junior College</h3><p style="color:var(--text-muted);">Intermediate Education | Vijayawada</p></div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <span class="year-tag">2023 — PRESENT</span>
+                    <h3 style="margin-top:5px;">Backstagepass Institute of Gaming</h3>
+                    <p style="color:var(--text-muted);">B.Sc. in Computer Science & Game Development | Hyderabad</p>
+                </div>
             </div>
         </section>
 
         <section id="skills">
             <h1 class="title-sharp">Technical <span class="gold">Stack</span></h1>
             <div class="glass-card">
-                <h3 style="color: var(--accent); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">Design & Prototyping</h3>
+                <h3 style="color: var(--accent); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">Design Ecosystem</h3>
                 <div class="tech-grid">
                     <div class="tech-box"><i class="devicon-figma-plain"></i><span class="tech-label">Figma</span></div>
                     <div class="tech-box"><i class="devicon-canva-original"></i><span class="tech-label">Canva</span></div>
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="glass-card">
-                <h3 style="color: var(--accent); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">Operational Systems</h3>
+                <h3 style="color: var(--accent); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">Operational Engineering</h3>
                 <div class="tech-grid">
                     <div class="tech-box"><i class="devicon-unity-original"></i><span class="tech-label">Game Dev</span></div>
                     <div class="tech-box"><i class="devicon-xd-plain"></i><span class="tech-label">UI Design</span></div>
@@ -157,16 +157,21 @@
                     <span style="color: var(--accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;">Premium UI/UX Case Study</span>
                     <div style="width: 10px; height: 10px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent);"></div>
                 </div>
-                <h2 style="font-size: 3rem; margin-bottom: 30px; font-family: 'Space Grotesk'; text-transform: uppercase; line-height: 1;">Travel App <span class="gold">UX Ecosystem</span></h2>
+                <h2 style="font-size: 3rem; margin: 15px 0 30px; font-family: 'Space Grotesk'; text-transform: uppercase; line-height: 1;">Travel App <span class="gold">UX Ecosystem</span></h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; border-top: 1px solid var(--glass-border); padding-top: 30px;">
                     <div>
                         <h4 style="color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase;">Architecture & Flow</h4>
-                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Designed a modern travel discovery app with a clear visual hierarchy. Developed end-to-end user flows including onboarding, destination exploration, and booking. Simplified complex interactions while reducing friction across multiple touchpoints.</p>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">Designed a modern travel discovery and community mobile application with intuitive navigation and a clear visual hierarchy to enhance user experience. Developed end-to-end user flows including onboarding, destination exploration, advanced search, booking, and trip planning.</p>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Created clean, user-friendly interfaces that simplify browsing, planning, and booking across multiple touchpoints while reducing friction in key interactions.</p>
                     </div>
                     <div>
                         <h4 style="color: var(--accent); margin-bottom: 15px; font-size: 0.9rem; text-transform: uppercase;">Systems & Social</h4>
-                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Integrated community features such as reviews and photo sharing to enrich user engagement. Built a consistent design system in Figma with reusable components for scalability. Implemented personalized recommendation sections.</p>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px;">Integrated community features such as reviews, photo sharing, and user engagement to enrich the platform. Built a consistent design system in Figma with reusable components, typography, and spacing for scalability and visual consistency.</p>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">Implemented personalized recommendations and engaging UI elements to improve usability and overall user interaction.</p>
                     </div>
+                </div>
+                <div style="margin-top: 40px; padding: 30px; background: rgba(212, 175, 55, 0.03); border-radius: 20px; border: 1px solid var(--glass-border);">
+                    <p style="color: var(--text-main); font-weight: 600; font-style: italic;">"Delivered a cohesive product concept that seamlessly combines travel planning, booking, and social connectivity in one platform."</p>
                 </div>
                 <a href="https://www.figma.com/design/Prm36ie0egvlo5XsEahc7o/Travel-App---Explore-The-World--Community-?node-id=9-643" target="_blank" class="btn-gold">Inspect Figma Prototype ↗</a>
             </div>
@@ -178,12 +183,19 @@
                 <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px;">Experimental space bridging **Game Engineering** and **Interactive Design**.</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
                     <div style="padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 25px;">
+                        <h4 style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Experimental Logic</h4>
                         <h3 style="margin-bottom: 15px;">Immersive Game HUD</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">High-performance HUDs built for immersion using Unity/C#.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Developing high-performance Head-Up Displays (HUD) using Unity/C#. Focused on player immersion and minimizing cognitive load during intense gameplay.</p>
                     </div>
                     <div style="padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 25px;">
+                        <h4 style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Environmental UX</h4>
                         <h3 style="margin-bottom: 15px;">Game Level Design</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Analyzing spatial storytelling and flow within 3D environments.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Exploring spatial storytelling and user flow within 3D environments. Analyzing how environmental cues guide player behavior without explicit instructions.</p>
+                    </div>
+                    <div style="padding: 25px; background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 25px;">
+                        <h4 style="color: var(--accent); text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Interaction</h4>
+                        <h3 style="margin-bottom: 15px;">Micro-Interactions</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">Building library of CSS and JS animations to enhance website engagement. Focused on staying updated with modern design trends and performance optimization.</p>
                     </div>
                 </div>
             </div>
